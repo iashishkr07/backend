@@ -13,9 +13,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, )
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('MongoDB connected'))
-    .catch((error) => console.log('MongoDB connection error: ', error));
+    .catch(err => console.err('MongoDB connection error: ', err));
 
 // Contact Schema and Model
 const contactSchema = new mongoose.Schema({
